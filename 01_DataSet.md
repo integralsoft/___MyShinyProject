@@ -2,7 +2,7 @@ This app will demonstrate simple, additive and interactive regression. It will u
 
 The data set contains 397 observations containing 7 variables, shown further below. 
 
-The data investigates whether there is a correlation between various explanatory variables and a professor's salary. We will investigate this while demonstrating various methods of regression.
+The data investigates whether there is a correlation between various explanatory variables and professors' salaries. We will investigate this while demonstrating various methods of regression.
 
 Variable Name          | Description           
 --------------------   | ------------------------------------------------
