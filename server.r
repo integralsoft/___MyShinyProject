@@ -28,10 +28,6 @@ shinyServer(function(input, output, session) {
         return(idx)
     }    
     
-      output$plot <- renderPlot({
-    plot(cars, type=input$plotType)
-  })
-
   output$plot2_XY <- renderPlot({
       
       #xVar <- Salaries$rank
@@ -39,9 +35,20 @@ shinyServer(function(input, output, session) {
       xVar <- getIndex(input$plotXVar)
       yVar <- getIndex("Salary")
       plot(sData[,xVar], sData[,yVar])
+      
       #plot(input$plotXVar, Salaries$salary) 
       #type=input$plotType)
   })
+  
+  output$plot2_Hist <- renderPlot({
+      
+      xVar <- getIndex(input$plotXVar)
+      yVar <- getIndex("Salary")
+      if (class(sData[,xVar]) == "integer") {
+          hist(sData[,xVar])
+      }
+
+  }) 
   
   output$summary <- renderPrint({
     summary(cars)

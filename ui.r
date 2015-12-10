@@ -33,52 +33,9 @@ shinyUI(navbarPage("Regression Tutorial",
                ),
                mainPanel(
                    plotOutput("plot2_XY"),
+                   plotOutput("plot2_Hist"),
                    width = 6
                )
            )
-  ),
-  tabPanel("3d tab",
-           sidebarLayout(
-               sidebarPanel(
-                   #includeMarkdown("file2.md"),
-                   radioButtons("plotType", "Plot type",
-                                c("Scatter"="p", "Line"="l")
-                   )
-               ),
-               mainPanel(
-                   plotOutput("plot3")
-               )
-           )
-  ),
-  tabPanel("4th tab",
-           sidebarLayout(
-               sidebarPanel(
-                   #includeMarkdown("file2.md"),
-                   radioButtons("plotType", "Plot type",
-                                c("Scatter"="p", "Line"="l")
-                   )
-               ),
-               mainPanel(
-                   plotOutput("plot4")
-               )
-           )
-  ),
-  tabPanel("5th tab",
-           sidebarLayout(
-               sidebarPanel(
-                   #includeMarkdown("file2.md"),
-                   radioButtons("plotType", "Plot type",
-                                c("Scatter"="p", "Line"="l")
-                   )
-               ),
-               mainPanel(
-                   plotOutput("plot5")
-               )
-           )
   )
-  
-  
-  
-  
-  
   ))

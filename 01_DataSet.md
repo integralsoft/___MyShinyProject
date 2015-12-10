@@ -9,8 +9,8 @@ Discipline	           | a factor with department levels {A = "theoretical", B = 
 YearsPhd               | years since receiving PhD                                                       
 YearsService           | years of service                                                                
 Gender 			       | a factor with levels {Female, Male}                                             
-Salary		           | nine-month salary, in dollars   
+Salary		           | nine-month salary, in dollars        
+   
 
-This is a Shiny app, which renders R code.                                              
 
 
