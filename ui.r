@@ -8,9 +8,6 @@ shinyUI(navbarPage("Regression Tutorial",
     sidebarLayout(
       sidebarPanel(
           includeMarkdown("01_DataSet.md"),
-#         radioButtons("plotType", "Plot type",
-#           c("Scatter"="p", "Line"="l")
-#         ), 
         width = 8
        )
       ,
@@ -29,13 +26,39 @@ shinyUI(navbarPage("Regression Tutorial",
                    
                    #hr()
                    #helpText("Select an explanatory variable")
+                   uiOutput("DS_ui"),
                    width = 6
                ),
                mainPanel(
-                   plotOutput("plot2_XY"),
-                   plotOutput("plot2_Hist"),
+                   imageOutput("dataPlotInfo"),
+                   imageOutput("dataPlotInfo2"),
+                   #plotOutput("plot2_XY"),
+                   #plotOutput("plot2_Hist"),
                    width = 6
                )
-           )
+           )),
+   tabPanel("Simp Reg",
+            sidebarLayout(
+                sidebarPanel(
+                    #includeMarkdown("02_DataPlot.md"),
+                    selectInput("sr_plotXVar", "Select Explanatory Variable",
+                                #choices=colnames(sData[,!(colnames(sData) == "Salary")])),
+                   
+                    choices=colnames(sData[,!(colnames(sData) == "Salary")])),
+                #paste("01_", input$plotXVar, ".md", sep="")
+                    
+                    #hr()
+                    #helpText("Select an explanatory variable")
+                    #uiOutput("DS_ui"),
+                    width = 3
+                ),
+                mainPanel(
+                    imageOutput("summaryInfo"),
+                    #verbatimTextOutput("SimpReg"),
+                    #renderPrint("SimpReg"),
+                    width = 8
+                )
+            )
+   )       
   )
-  ))
+  )
